@@ -1,6 +1,6 @@
 // DO NOT CHANGE THIS FILE
-exports.seed = function (knex) {
-  return knex('actions').insert([
+exports.seed = async function (knex) {
+  await knex('actions').insert([
     {
       project_id: 1,
       description: 'Fork and Clone Repository',
