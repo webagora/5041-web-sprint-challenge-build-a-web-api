@@ -13,7 +13,11 @@ router.get('/', (req, res, next) => {
        next({ message: "The actions information could not be retrieved" })
       })
     
-    });
+});
+
+router.get('/:id', md.validateActionId, (req, res) => {
+    res.json(req.action)  
+});
   
 
 module.exports = router
