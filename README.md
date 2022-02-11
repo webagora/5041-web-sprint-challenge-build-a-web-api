@@ -147,7 +147,25 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
-1. Understand and explain the use of Middleware.
-1. The basic principles of the REST architectural style.
-1. Understand and explain the use of Express Routers.
-1. Describe tooling used to manually test the correctness of an API.
+   >**With Node.js**, we can write server-side code using JS. This allows us to take full advantage of the processor as JS is a single-threaded and asynchronous language. Additionally, the client and server are using the same language and have access to the same NPM repository. core features of Node.js in a short nut are:
+   -   Asynchronous and Event Driven − All APIs of Node. js library are asynchronous, that is, non-blocking.
+   -   Very Fast − Being built on Google Chrome's V8 JavaScript Engine, Node. js library is very fast in code execution.
+   -   Single Threaded but Highly Scalable − Node.
+   -   No Buffering − Node.
+   -   License − Node.
+   >**Express** is a node web application framework that extends the functionality of our application. Its benefits include allowing us to build SPA's, building RESTful web services that work with JSON,, and the ability to add middleware to routing.
+2. Understand and explain the use of Middleware.
+    >**Middleware** is a kinda of software that provides common services and capabilities to applications outside of what's offered by the operating system. Data management, application services, messaging, authentication, and API management are all commonly handled by middleware.
+    >**Middlewares** in Nodejs are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. These functions are used to modify req and res objects for tasks like parsing request bodies, adding response headers, intercepts a process, runs a specific function at that interception point and then either allows the process to continue or may end the process if need be. Well-written code should utilize middleware as it allows for better organization through separation of concerns, better data management, and greater overall efficiency.
+3. The basic principles of the REST architectural style.
+   > The six guiding principles or constraints of the RESTful architecture are:
+   -  **Uniform Interface** - The four constraints can achieve a uniform REST interface: Identification of resources, Manipulation of resources through representations, Self-descriptive messages, and Hypermedia as the engine of application state
+   -  **Client-server** - The client-server design pattern enforces the separation of concerns, which helps the client and the server components evolve independently.
+   -  **Stateless** - Statelessness mandates that each request from the client to the server must contain all of the information necessary to understand and complete the request. The server cannot take advantage of any previously stored context information on the server. For this reason, the client application must entirely keep the session state.
+   -  **Cacheable** - The cacheable constraint requires that a response should implicitly or explicitly label itself as cacheable or non-cacheable. If the response is cacheable, the client application gets the right to reuse the response data later for equivalent requests and a specified period.
+   -  **Layered system** The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior. For example, in a layered system, each component cannot see beyond the immediate layer they are interacting with.
+   -  **Code on demand** (optional) - REST also allows client functionality to extend by downloading and executing code in the form of applets or scripts. The downloaded code simplifies clients by reducing the number of features required to be pre-implemented. Servers can provide part of features delivered to the client in the form of code, and the client only needs to execute the code.
+4. Understand and explain the use of Express Routers.
+  > Express router is a built in form of middleware. When a request comes through, it is forwarded to a sub-handler depending on the path and request type.
+5. Describe tooling used to manually test the correctness of an API.
+   > There are a wide range of open-source tools we can use to manually test an API. Some provide a GUI, while others can be used from the command line. Postman is a a great GUI we can use, while HTTPie or curl can be used from the command line. With these tools we can plug in our endpoints and make sure we our getting the proper responses back based on what we do or do not send in through the request. 
