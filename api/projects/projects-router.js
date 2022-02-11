@@ -33,4 +33,13 @@ router.put('/:id', md.validateProjectId, md.validateProject, (req, res, next) =>
       .catch(next)
   });
 
+router.delete('/:id', md.validateProjectId, (req, res, next) => {
+    
+    Project.remove(req.params.id)
+      .then(() => {      
+        res.status(201).json(req.project)
+      })
+      .catch(next)
+});  
+
 module.exports = router
