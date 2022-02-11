@@ -14,7 +14,21 @@ function validateActionId (req, res, next) {
         .catch (next)
   }
 
+function validateAction (req, res, next) {
+
+    const { notes, description } = req.body
+    if (!notes || !notes.trim() || !description || !description.trim() ) {
+      res.status(400).json ({
+        message: 'missing request body field'
+      })
+    } else {    
+      next()
+    }
+
+  }
+
 module.exports ={    
     validateActionId,
+    validateAction,
     
   } 
