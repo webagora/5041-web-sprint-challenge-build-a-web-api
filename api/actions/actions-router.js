@@ -29,6 +29,18 @@ router.post('/', validateProjectId, md.validateAction, (req, res, next) => {
       .catch(next)
   });
 
-
+router.put(
+    '/:id', 
+    validateProjectId, 
+    md.validateActionId, 
+    md.validateAction, (req, res, next) => {
+    
+    Action.update(req.params.id, req.body)
+      .then(updatedAction => {      
+        res.status(201).json(updatedAction)
+      })
+      .catch(next)
+});
+  
 
 module.exports = router
