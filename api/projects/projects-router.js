@@ -15,5 +15,14 @@ router.get('/:id', md.validateProjectId, (req, res) => {
     res.json(req.project)  
   });
 
+router.post('/', md.validateProject, (req, res, next) => {
+    
+    Project.insert(req.body)
+      .then(newProject => {      
+        res.status(201).json(newProject)
+      })
+      .catch(next)
+      
+});  
 
 module.exports = router
